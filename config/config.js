@@ -1,6 +1,6 @@
 module.exports = {
     "username": "root",
-    "password": "root",
+    "password": "123456",
     "database": "instagram",
     "host": "127.0.0.1",
     "dialect": "mysql"
