@@ -23,7 +23,7 @@ const usuariosController = {
         await Usuario.destroy({where: {
             id: usuario.id
         }})
-        return res.send('Deletado com sucesso!')
+        return res.send('Usuario deletado com sucesso!')
     }
 }
 

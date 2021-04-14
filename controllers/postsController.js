@@ -23,7 +23,7 @@ const postsController = {
         await Post.destroy({where: {
             id: post.id
         }})
-        return res.send('Deletado com sucesso!')
+        return res.send('Post deletado com sucesso!')
     }
 }
 
