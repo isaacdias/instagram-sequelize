@@ -6,17 +6,30 @@ const postsController = {
         return res.json(posts);
     },
     create: async (req, res) => {
-        const post = req.body;
-        await Post.create(post);
+        const {texto, img, usuarios_id, n_likes} = req.body; 
+
+        const post = await Post.create({
+            texto,
+            img,
+            usuarios_id,
+            n_likes
+        });
+
         return res.json(post)
     },
     update: async (req, res) => {
-        const post = req.params;
-        const postAtualizado = req.body;
-        await Post.update(postAtualizado, {where: {
-            id: post.id
-        }})
-        return res.json(postAtualizado)
+        const {id} = req.params;
+        const {texto, img, usuarios_id, n_likes} = req.body; 
+
+        const post = await Post.update({
+            texto,
+            img,
+            usuarios_id,
+            n_likes
+        }, {
+            where: {id}
+        });
+        return res.json(post)
     },
     delete: async (req, res) => {
         const post = req.params;

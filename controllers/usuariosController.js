@@ -6,17 +6,27 @@ const usuariosController = {
         return res.json(usuarios);
     },
     create: async (req, res) => {
-        const usuario = req.body;
-        await Usuario.create(usuario);
+        const {nome, email, senha} = req.body;
+        
+        const usuario = await Usuario.create({
+            nome,
+            email,
+            senha
+        });
         return res.json(usuario)
     },
     update: async (req, res) => {
-        const usuario = req.params;
-        const usuarioAtualizado = req.body;
-        await Usuario.update(usuarioAtualizado, {where: {
-            id: usuario.id
-        }})
-        return res.json(usuarioAtualizado)
+        const {id} = req.params;
+        const {nome, email, senha} = req.body;
+
+        const usuario = await Usuario.update({
+            nome,
+            email,
+            senha
+        }, {
+            where: {id}
+        });
+        return res.json(usuario)
     },
     delete: async (req, res) => {
         const usuario = req.params;
