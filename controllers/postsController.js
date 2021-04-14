@@ -24,6 +24,13 @@ const postsController = {
             id: post.id
         }})
         return res.send('Post deletado com sucesso!')
+    },
+    show: async (req, res) => {
+        let { id } = req.params;
+        let posts = await Post.findAll({
+            where: { usuarios_id: id } 
+        });
+        return res.json(posts);
     }
 }
 
