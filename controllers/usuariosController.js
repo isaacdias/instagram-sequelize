@@ -18,7 +18,6 @@ const usuariosController = {
         }})
         return res.json(usuarioAtualizado)
     },
-
     delete: async (req, res) => {
         const usuario = req.params;
         await Usuario.destroy({where: {
