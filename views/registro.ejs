@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/registro.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <main>
+        <div class="banner">
+            <img src="/img/banner-login.png" alt="Smartphones com desmonstração do instagram">
+            <p>Cadastre-se para ver fotos dos seus amigos</p>
+        </div>
+        <div class="login">
+            <img src="img/logo.png" alt="" class="logo">
+            <form action="/usuarios" method="POST">
+                <input type="text" name="nome" id="input-nome" placeholder="Digite seu nome">
+                <input type="email" name="email" id="input-email" placeholder="Digite seu emal">
+                <input type="password" name="senha" id="input-senha" placeholder="Digite sua senha">
+                <input type="password" name="confirmaSenha" id="input-senha" placeholder="Confirme sua senha">
+                <button type="submit">Cadastar</button>
+            </form>
+            <div>
+                <p class="termos">Ao se cadastrar, você concorda com nossos <a href="https://help.instagram.com/519522125107875" target="_blank">Termos, Política de dados e Política de Cookies.</a></p>
+            </div>
+            <div class="cta-cadastro">
+                <p>Tem uma conta? <a href="/usuarios/login">Conecte-se</a></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
